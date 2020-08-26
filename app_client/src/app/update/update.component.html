@@ -1,0 +1,32 @@
+﻿<h2>Update point {{id}}</h2>
+<form [formGroup]="form" (ngSubmit)="save()">
+    <div class="form-group">
+        <label for="y">Name</label>
+        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"  />
+
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="x">X</label>
+        <input type="number" formControlName="x" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.x.errors }"  />
+
+        <div *ngIf="submitted && f.x.errors" class="invalid-feedback">
+            <div *ngIf="f.x.errors.required">X is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="y">Y</label>
+        <input type="number" formControlName="y" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.y.errors }"  />
+
+        <div *ngIf="submitted && f.y.errors" class="invalid-feedback">
+            <div *ngIf="f.y.errors.required">Y is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">
+            Save
+        </button>
+    </div>
+</form>
